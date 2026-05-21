@@ -6,15 +6,15 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote: "One of the most dedicated students I've mentored. Their code quality and attention to detail stood out from day one.",
-    name: "Tech Mentor",
-    role: "Moringa School Instructor",
+    name: "Peter Muturi",
+    role: "Technical Mentor - Moringa School",
     initials: "TM",
   },
   {
     quote: "We paired on multiple projects and they always brought creative solutions. Great communicator and a reliable teammate.",
-    name: "Study Partner",
+    name: "Leshan Alan",
     role: "Fellow Developer",
-    initials: "SP",
+    initials: "LA",
   },
   {
     quote: "They built our team's internal tool in two weeks flat. The interface was intuitive and it just worked — no hand-holding needed.",

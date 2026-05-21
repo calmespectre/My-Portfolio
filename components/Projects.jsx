@@ -3,17 +3,17 @@ import { motion, useInView } from "framer-motion";
 import { FiShoppingCart, FiCheckSquare, FiGlobe, FiGithub, FiExternalLink } from 'react-icons/fi';
 
 const projects = [
-  {
-    icon: FiShoppingCart,
-    title: "E-Commerce Platform",
-    desc: "A full online store where users can browse products, add items to their cart, and complete purchases. Built with real payment flow and inventory tracking.",
-    role: "Full-Stack Developer",
-    impact: "Handles 100+ products with search and filtering",
-    tech: ["React", "TypeScript", "Django", "PostgreSQL"],
-    color: "from-pink-500/20 to-purple-500/20",
-    githubUrl: "https://github.com/yourusername/ecommerce-platform",
-    liveUrl: "https://ecommerce-demo.com",
-  },
+  // {
+  //   icon: FiShoppingCart,
+  //   title: "E-Commerce Platform",
+  //   desc: "A full online store where users can browse products, add items to their cart, and complete purchases. Built with real payment flow and inventory tracking.",
+  //   role: "Full-Stack Developer",
+  //   impact: "Handles 100+ products with search and filtering",
+  //   tech: ["React", "TypeScript", "Django", "PostgreSQL"],
+  //   color: "from-pink-500/20 to-purple-500/20",
+  //   githubUrl: "https://github.com/yourusername/ecommerce-platform",
+  //   liveUrl: "https://ecommerce-demo.com",
+  // },
   {
     icon: FiCheckSquare,
     title: "Hope Evangelistic Ministry",
@@ -33,8 +33,8 @@ const projects = [
     impact: "Sub-1s load time, 95+ Lighthouse score",
     tech: ["React", "TypeScript", "Tailwind", "Framer Motion"],
     color: "from-primary/20 to-orange-500/20",
-    githubUrl: "https://github.com/yourusername/portfolio",
-    liveUrl: "https://yourportfolio.com",
+    githubUrl: "https://github.com/calmespectre/My-Portfolio.git",
+    liveUrl: "https://gerradmeitamei.vercel.app/",
   },
 ];
 
