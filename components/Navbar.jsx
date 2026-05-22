@@ -1,4 +1,3 @@
-// components/Navbar.jsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -15,9 +14,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const scrollTo = (href) => {
-    setIsOpen(false);
     const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      setIsOpen(false);
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
   };
 
   return (
@@ -53,7 +56,7 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white">
+        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white z-50">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -61,17 +64,18 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-gray-800 bg-black/95 backdrop-blur-xl"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-gray-800 shadow-xl z-40"
           >
             <ul className="flex flex-col p-6 gap-4">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <button
                     onClick={() => scrollTo(item.href)}
-                    className="text-gray-300 hover:text-white transition-colors w-full text-left"
+                    className="text-gray-300 hover:text-white transition-colors w-full text-left py-2 text-base"
                   >
                     {item.label}
                   </button>
@@ -80,7 +84,7 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={() => scrollTo("#contact")}
-                  className="w-full text-center px-4 py-2 rounded-lg bg-[#ff4d6d] text-white"
+                  className="w-full text-center px-4 py-3 rounded-lg bg-[#ff4d6d] text-white text-base"
                 >
                   Hire Me
                 </button>
